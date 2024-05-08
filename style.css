@@ -1,0 +1,33 @@
+:root {
+  --main-bg-color: hsl(195, 100%, 50%);
+  --main-text-color: white;
+}
+
+body {
+  background: var(--main-bg-color);
+  font-family: Arial, sans-serif;
+  color: var(--main-text-color);
+}
+
+::selection {
+  background: var(--main-text-color);
+  color: var(--main-bg-color);
+}
+
+a,
+a:hover {
+  color: var(--main-text-color);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+th {
+  text-align: left;
+  padding: 0 0.5em 0 0;
+}
+
+td {
+  padding: 0 0.5em .5em 0;
+}
