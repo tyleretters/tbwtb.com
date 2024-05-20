@@ -1,2 +1,1 @@
-# tbwtb.com
-They Became What They Beheld
+Dangerous business, this looping nonsense. Dangerous, dangerous business...
