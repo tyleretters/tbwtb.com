@@ -13,6 +13,16 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        repository: tyleretters/tbwtb.com
+        token: ${{ secrets.SECRET_PAT }}
+
+    - name: Configure Git
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git remote set-url origin https://github.com/tyleretters/tbwtb.com.git
+        echo "Git remote URL set"
 
     - name: Get the latest commit hash
       id: get_hash
