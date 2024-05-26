@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get the latest commit hash
+      id: get_hash
+      run: echo "::set-output name=hash::$(git rev-parse HEAD)"
+
+    - name: Update index.html with commit hash
+      run: |
+        sed -i "s/{{ COMMIT_HASH }}/${{ steps.get_hash.outputs.hash }}/g" index.html
+        sed -i "s/{{ BUILD_TIME }}/${{ steps.get_time.outputs.time }}/g" index.html
+
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .  # Adjust if your index.html is in a different directory
