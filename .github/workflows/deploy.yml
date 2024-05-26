@@ -13,9 +13,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        repository: tyleretters/tbwtb.com
-        token: ${{ secrets.SECRET_PAT }}
 
     - name: Configure Git
       run: |
