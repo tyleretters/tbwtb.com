@@ -10,6 +10,7 @@
   "observability": {
     "enabled": true
   },
+  "workers_dev": true,
   "routes": [
     {
       "pattern": "tbwtb.com/*",
